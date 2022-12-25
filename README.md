@@ -5,7 +5,7 @@
 
 Here we write a bash script that we can use to deploy an Nginx web server on an Amazon Elastic Compute Cloud (EC2) instance, and configure it to display the IP address of the instance:
 
-'''
+```
 #!/bin/bash
 
 # Update package manager
@@ -48,20 +48,20 @@ EOF"
 
 # Restart Nginx to apply the changes
 sudo service nginx restart
-'''
+```
 
 
 To use this script, copy and paste it into a file, then make the file executable by running the following command:
 
-'''
+```
 chmod +x deploy_nginx.sh
-'''
+```
 
 Then, you can run the script by typing:
 
-'''
+```
 ./deploy_nginx.sh
-'''
+```
 
 This script will update the package manager on the EC2 instance, install Nginx, retrieve the public IP address of the instance using the EC2 metadata service, create a new configuration file for the default Nginx server block, create a new index.html file in the root directory of the Nginx server, and restart Nginx to apply the changes.
 
@@ -69,7 +69,7 @@ Once the script has completed, you should be able to access the Nginx web server
 
 
 
-Now if we use Ansible to deploy Nginx web server displaying  IP address of the EC2 instance instead
+2. Now if we use Ansible to deploy Nginx web server displaying  IP address of the EC2 instance instead
 
 Here is an Ansible playbook that we will can use to deploy an Nginx web server on an Amazon Elastic Compute Cloud (EC2) instance and configure it to display the IP address of the instance:
 
