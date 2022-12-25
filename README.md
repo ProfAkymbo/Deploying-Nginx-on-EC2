@@ -73,7 +73,7 @@ Once the script has completed, you should be able to access the Nginx web server
 
 Here is an Ansible playbook that we will can use to deploy an Nginx web server on an Amazon Elastic Compute Cloud (EC2) instance and configure it to display the IP address of the instance:
 
-Copy code
+```
 ---
 - hosts: all
   become: true
@@ -123,10 +123,14 @@ Copy code
       service:
         name: nginx
         state: restarted
+```
+
 To use this playbook, save it to a file (e.g. "deploy_nginx.yml"), then run the following command:
 
-Copy code
+```
 ansible-playbook -i "ec2_instance_ip," deploy_nginx.yml
+```
+
 Replace "ec2_instance_ip" with the public IP address or hostname of the EC2 instance.
 
 This playbook will update the package manager on the EC2 instance, install Nginx, retrieve the public IP address of the instance using the EC2 metadata service, create a new configuration file for the default Nginx server block, create a new index.html file in the root directory of the Nginx server, and restart Nginx to apply the changes.
