@@ -4,7 +4,7 @@ A step by step guide to deploy Nginx web server displaying IP address of the EC2
 
 Here we write a bash script that we can use to deploy an Nginx web server on an Amazon Elastic Compute Cloud (EC2) instance, and configure it to display the IP address of the instance:
 
-copy code
+'''
 #!/bin/bash
 
 # Update package manager
